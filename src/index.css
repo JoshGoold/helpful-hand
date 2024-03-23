@@ -1,13 +1,238 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html{
+  color-scheme: dark;
+  padding: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar{
+  display: none;
+}
+h1{
+ 
+  font-weight: 200;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 20px;
+  border-left: 1px solid white;
+}
+@keyframes slideInLeft {
+  from {
+      transform: translateX(-300px);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+@keyframes fadeIn{
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.fadeIn{
+  animation: fadeIn 1s ease-in;
+}
+.slideInLeft{
+  animation: slideInLeft 0.5s ease-in;
+}
+.to-do-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.to-do-list input{
+ border: none;
+ padding: 10px;
+ border-radius: 5px;
+ width: 60%;
+ margin-left: 20px;
+}
+.add{
+  margin-top: 10px;
+  color: greenyellow;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s ease-in-out all;
+  cursor: pointer;
+}
+.add b{
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.add:hover{
+  transform: translateY(-3px);
+
+}
+ol{
+  width: 50%;
+  text-align: left;
+  
+  margin-left: -20px;
+
+}
+.list{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  
+}
+li{
+  background-color: rgba(0, 0, 0, 0.11);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 30px rgba(255, 255, 255, 0.144);
+}
+
+li button{
+  float: right;
+  background-color: transparent;
+  border: none;
+
+  font-size: 15px;
+}
+.taskComplete{
+  text-decoration: line-through;
+}
+li .text{
+
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.float{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  padding-left: 20px;
+}
+h1 button{
+  float: right;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.2s ease-in-out all;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1 button:hover{
+  transform: translateY(-5px);
+  color: hsl(0, 0%, 80%);
+}
+.main-ol{
+  display: inline;
+  list-style: none;
+}
+.default{
+  text-align: center;
+  margin-top: 100px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.main-ol li{
+  border-top: 0.1px solid white ;
+ 
+}
+.todoh1{
+  font-size: 1.5rem;
+  border-left: none;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.634);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.428);
+}
+.clock {
+  font-size: 60px;
+}
+@keyframes rotateClock {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotate{
+  animation: rotateClock 2.5s ease infinite;
+}
+.footer{
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+hr{
+  margin-top: 100px;
+}
+@keyframes intice {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.intice{
+  animation: intice 1.3s ease-out infinite;
+}
+h1 input{
+  float: right;
+}
+.calculator{
+  width: 320px;
+  height: 400px;
+  background-color: grey;
+  position: absolute;
+  top: 20%;
+  left: 38%;
+  padding: 30px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 10px 10px 50px black;
+}
+.calculator .inputScreen {
+  width: 94%;
+  height: 30px;
+  background-color: hsl(0, 0%, 30%);
+  padding: 10px;
+}
+.calculator .inputScreen .result{
+  font-size: 25px;
+}
+
+.calculator .buttons{
+  width: 96%;
+  margin-top: 20px;
+}
+.calculator .buttons table {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.calculator .buttons table tr td button{
+  width: 75px;
+  height: 50px;
+  box-shadow: 0 0 10px hsl(0, 0%, 10%);
+}
+@keyframes intro {
+
+  from {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+.intro{
+  animation: intro 0.5s ease-in;
 }
